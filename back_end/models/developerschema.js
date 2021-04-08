@@ -4,13 +4,10 @@ var schema=mongoose.Schema;
 
 
 const developerschema=new schema(
-    {   login:
-        {
-            type:String
-        },
+    {   
         id:
         {
-            type:Number,
+            type:String,
              required:true,
              unique:true
         },
@@ -45,27 +42,25 @@ const developerschema=new schema(
         },
         github_id :
         {
-            type:Number,
+            type:String,
         },
         linkedin_id : 
-        {
-            type:Number,
+        {type:String,
         },
         codechef_id :
         {
-            type:Number,
+            type:String,
         },
         hackerrank_id :
         {
-            type:Number,
+            type:String,
         },
         twitter_id : 
         {
-            type:Number,
+            type:String,
         },
         medium_id :
-        {
-            type:Number,
+        {type:String,
         },
         repo:[repository],
        

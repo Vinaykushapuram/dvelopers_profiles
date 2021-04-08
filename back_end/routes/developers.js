@@ -18,25 +18,8 @@ router.get('/developers', function(req, res, next) {
 
 router.post('/developers',function(req,res,next){
   var query=req.body;
-  var newuser={
-    "login":" ",
-     "id" : 0,
-     "avatar_url":"",
-     "name":"",
-     "company":"",
-     "blog": "",
-     "location" :"",
-     "email" :"",
-     "bio" :"",
-     "github_id" :1,
-     "linkedin_id" : 1,
-     "codechef_id" :1,
-     "hackerrank_id" :1,
-     "twitter_id" : 1,
-     "medium_id":1,
-     "repo":new Array,
-  };
-  fetch(`https://api.github.com/users/${query.login}`).then((user)=>
+  var newuser=new developer;
+  fetch(`https://api.github.com/users/${query.github_id}`).then((user)=>
   {   
     
       if(user.status!=200){
@@ -45,8 +28,8 @@ router.post('/developers',function(req,res,next){
       }
       else
       {
-         newuser.login=user.login;
-         newuser.id=user.id;
+       
+         newuser.id=user.login;
          newuser.avatar_url=user.avatar_url;
         newuser.name=user.name;
         newuser.company=user.company;
@@ -80,8 +63,10 @@ router.post('/developers',function(req,res,next){
         });
 
         developer.create(newuser).then((newuser)=>{
-          console.log('user Created ', dish);
-        res.statusCode = 200;
+          console.log('user Created ', newuser);
+        res.statusCode = 201;
+        res.setHeader('Content-Type','application/json');
+        res.json({"id":newuser.id});
         });
 
       }
@@ -90,13 +75,13 @@ router.post('/developers',function(req,res,next){
   
 
 });
-router.delete('/developers',function(req,res,next){
-  var query=req.body;
+router.delete('/developers/:id',function(req,res,next){
+  var query=req.params;
 
   developer.remove({query}).then((developer)=>
   {
-     res.statusCode=200;
-     
+     res.statusCode=204;
+
   });
 
 });
@@ -107,6 +92,12 @@ router.get('/developers/:id',function(req,res,next){
     res.statusCode=200;
     res.setHeader('Content-Type','application/json');
     res.json(developer);}
+    else 
+    {
+      res.statusCode=404;
+      res.setHeader('Content-Type','application/json');
+      res.json("user does not exist");
+    }
   });
 
 
