@@ -45,27 +45,27 @@ const developerschema=new schema(
         },
         github_id :
         {
-            type:String,
+            type:Number,
         },
         linkedin_id : 
         {
-            type:String,
+            type:Number,
         },
         codechef_id :
         {
-            type:String,
+            type:Number,
         },
         hackerrank_id :
         {
-            type:String,
+            type:Number,
         },
         twitter_id : 
         {
-            type:String,
+            type:Number,
         },
         medium_id :
         {
-            type:String,
+            type:Number,
         },
         repo:[repository],
        
