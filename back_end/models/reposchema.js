@@ -18,7 +18,7 @@ const repository= new schema(
         },
         updated_at:
         {
-            type:string
+            type:String,
         }
 
 

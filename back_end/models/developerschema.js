@@ -1,15 +1,16 @@
 var mongoose =require('mongoose');
-var  repository=require('./reposchema');
+var  repository=require('./reposchema').schema;
 var schema=mongoose.Schema;
+
 
 
 const developerschema=new schema(
     {   
-        id:
+        login:
         {
             type:String,
-             required:true,
-             unique:true
+            unique: true,
+           
         },
         avatar_url:
         {
@@ -62,7 +63,25 @@ const developerschema=new schema(
         medium_id :
         {type:String,
         },
-        repo:[repository],
+        repo:[
+           { name:
+        {
+            type:String,
+        },
+        html_url : 
+        {
+            type:String,
+        },
+        description :
+        {
+            type:String,
+        },
+        updated_at:
+        {
+            type:String,
+        }
+          }
+        ],
        
 
     },

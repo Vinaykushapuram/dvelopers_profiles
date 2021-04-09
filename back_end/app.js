@@ -8,7 +8,7 @@ var mongoose=require('mongoose');
 var  developers  = require('./routes/developers');
 
 var app = express();
-  app.use(cors());
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,9 +21,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 //connecting to mongodb
 
-mongoose.connect('mongodb+srv://vinay:Vinay@dp@developersprofile1.usdpo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority').then((err)=>
-next(err));
-
+mongoose.connect('mongodb+srv://vinay:Vinay@dp@developersprofile1.usdpo.mongodb.net/developersprofile1?retryWrites=true&w=majority',{useNewUrlParser: true, useUnifiedTopology: true}).then((msg)=>
+console.log('connected to database')).catch((err)=> next(err));
+//routes
 app.use('/', developers);
 
 // catch 404 and forward to error handler
