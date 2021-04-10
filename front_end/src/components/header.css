@@ -12,7 +12,7 @@ top: 0px;
 }
 
 .heading{
-    
+    position: relative;
 display:flex;
 flex-flow: column wrap;
 position: relative;
@@ -31,7 +31,7 @@ color: #FFFFFF;
 .heading3{
    
 
-
+position: relative;
 text-align: center;
 font-family: Nunito Sans;
 font-style: normal;
@@ -50,30 +50,118 @@ color: #3F3D56;
      width:  50%;
   
     }
-    .searchBarout{
-        position: absolute;
-width: 821px;
-height: 80px;
-left: 310px;
-top: 835px;
+    .searchbar{
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      background: #D0CDE1;
+      width:10%;
 
-background: #D0CDE1;
-border-radius: 15px;
+      border-radius: 15px;
+    }
+   
+
+    .displaycard{
+        -ms-flex: 1;
+        flex:1;
+        position: relative;
+        display: flex;
+        flex-flow:row wrap;
+      justify-content: space-between;
+        align-items: center;
+        align-content: space-around;
+    
+
+    }
+    .displaycard> div{
+        flex: 50%;
+    }
+
+.card
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+   
+    
+}
+
+    .roundimg {
+        
+        
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+
     }
     .footer
-    {position: fixed;
+    {
+        position: relative;
         display:flex;
        flex-wrap: wrap;
         bottom: 0px;
         height: 80px;
         width: 100%;
         font-family: Nunito Sans;
-font-style: normal;
-font-weight: 600;
-font-size: 24px;
-line-height: 40px;
+       margin-bottom: 0%;
+         font-style: normal;
+          font-weight: 600;
+        font-size: 24px;
+     line-height: 40px;
 align-content: center;
 justify-content: center;
 color: #FFFFFF;
 background: #2F2E41;
     }
+.developersname{
+color: #9F8E63;
+font-size: large;
+font-family: Nunito Sans;
+font-style: normal;
+font-weight: normal;
+}
+
+
+.addev
+{
+ position: relative;
+ display: flex;
+ flex-flow:column wrap;
+
+ align-content: center;
+
+}
+.addevtxt
+{
+  
+ padding-top: 3%;
+ 
+font-family: Nunito Sans;
+font-style: normal;
+font-weight: 600;
+font-size: 30px;
+line-height: 40px;
+
+color: #3F3D56;
+
+}
+.adbtn
+{
+ padding-top: 2%;
+ padding-left: 5%;
+    
+}
+.adbtn1
+{ 
+    background: #7C639F;
+border-radius: 15px;
+width: 50%;
+height: 40px;
+font-family: Nunito Sans;
+font-style: normal;
+font-weight: 600;
+
+
+color: #FFFFFF;
+
+}

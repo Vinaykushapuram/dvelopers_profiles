@@ -4,12 +4,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose=require('mongoose');
-
+var cors=require('cors');
 var  developers  = require('./routes/developers');
 
 var app = express();
-
-
+//handling cors
+app.use(cors());
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -21,8 +21,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 //connecting to mongodb
 
-mongoose.connect('mongodb+srv://vinay:Vinay@dp@developersprofile1.usdpo.mongodb.net/developersprofile1?retryWrites=true&w=majority',{useNewUrlParser: true, useUnifiedTopology: true}).then((msg)=>
-console.log('connected to database')).catch((err)=> next(err));
+mongoose.connect('mongodb+srv://vinay:Vinay@dp@developersprofile1.usdpo.mongodb.net/developersprofile1?retryWrites=true&w=majority',{useNewUrlParser: true, useUnifiedTopology: true,useFindAndModify: false,useCreateIndex:true}).then((msg)=>
+console.log('connected to database')).catch((err)=> console.log(err));
 //routes
 app.use('/', developers);
 
