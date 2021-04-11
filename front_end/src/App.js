@@ -1,6 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
+import Header from './components/header';
+
+import Developerspage from './components/developerspage';
 
 const dotenv=require('dotenv');
 dotenv.config();
