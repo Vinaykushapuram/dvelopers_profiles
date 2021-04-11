@@ -3,7 +3,7 @@
     display:flex;
     flex-flow:row  wrap;
     justify-content: space-around;
-    height: 10%;
+    height: 300px;
     background: #2F2E41;
     width:100%;
     left: 0px;
@@ -62,19 +62,22 @@ color: #3F3D56;
    
 
     .displaycard{
-        -ms-flex: 1;
+    
         flex:1;
         position: relative;
         display: flex;
         flex-flow:row wrap;
-      justify-content: space-between;
-        align-items: center;
-        align-content: space-around;
-    
+      justify-content:center;
+        align-items: flex-end;
+        align-content: center;
+       padding-left: 3%;
+       
 
     }
     .displaycard> div{
         flex: 50%;
+        padding-top: 2%;
+        
     }
 
 .card
@@ -104,6 +107,9 @@ color: #3F3D56;
         width: 100%;
         font-family: Nunito Sans;
        margin-bottom: 0%;
+       bottom: 0;
+       margin-bottom: 0px
+       ;
          font-style: normal;
           font-weight: 600;
         font-size: 24px;
@@ -115,7 +121,7 @@ background: #2F2E41;
     }
 .developersname{
 color: #9F8E63;
-font-size: large;
+font-size: 20px;
 font-family: Nunito Sans;
 font-style: normal;
 font-weight: normal;

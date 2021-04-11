@@ -1,0 +1,83 @@
+.Adp
+{
+    display: flex;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+font-family: Nunito Sans;
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 44px;
+/* identical to box height */
+
+
+color: #000000;
+}
+.Adpg
+{
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-family: Nunito Sans;
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+
+/* identical to box height */
+padding-top: 1%;
+padding-left: 15px;
+color: #000000;
+}
+.adpgtxt{
+    width: 250px;
+    height: 30px;
+    
+background: #FFFFFF;
+border: 1px solid #D0CDE1;
+box-sizing: border-box;
+border-radius: 10px;
+   
+}
+.z{
+    position: fixed;
+    
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    width:100%;
+    top: 0px;
+    bottom: 0px;
+}
+.z1{
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius :2 px ;
+    display: inline-block;
+    min-height: 300px;
+    margin: 1rem;
+    position: relative;
+    min-width: 300px;
+  
+
+left: 20px;
+top: 30px;
+    
+    justify-self: center;
+}
+#portal {
+  position: fixed;
+    z-index: 1000;
+  }
+  .ic1{
+  
+    width : 4%;
+    height: 4%;
+    margin-left: 1%;
+    margin-right: 2%;
+}
+

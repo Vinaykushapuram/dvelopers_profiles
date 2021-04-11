@@ -6,7 +6,8 @@ var logger = require('morgan');
 var mongoose=require('mongoose');
 var cors=require('cors');
 var  developers  = require('./routes/developers');
-
+const dotenv=require('dotenv');
+dotenv.config();
 var app = express();
 //handling cors
 app.use(cors());
@@ -21,7 +22,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 //connecting to mongodb
 
-mongoose.connect('mongodb+srv://vinay:Vinay@dp@developersprofile1.usdpo.mongodb.net/developersprofile1?retryWrites=true&w=majority',{useNewUrlParser: true, useUnifiedTopology: true,useFindAndModify: false,useCreateIndex:true}).then((msg)=>
+mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser: true, useUnifiedTopology: true,useFindAndModify: false,useCreateIndex:true}).then((msg)=>
 console.log('connected to database')).catch((err)=> console.log(err));
 //routes
 app.use('/', developers);

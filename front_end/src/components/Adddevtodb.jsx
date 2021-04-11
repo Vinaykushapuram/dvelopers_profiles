@@ -1,0 +1,210 @@
+const dotenv=require('dotenv');
+dotenv.config();
+import React from 'react'
+
+import  Twitter from './twitter.png';
+import Hackerrank from './hackerrank.png';
+import Codechef from './codechef.png';
+import Github from './github.png';
+import Medium from './medium.png';
+import Linkedin from './linkedin.png';
+import './adddevtodb.css';
+import ReactDom from 'react-dom';
+const axios = require('axios').default;
+export default class Adddevtodb extends React.Component {
+    constructor(props){
+        super(props);
+        this.state={
+          github_id:'',
+          linkedin_id:'',
+        codechef_id:'',
+          hackerrank_id:'',
+          twitter_id:'',
+        medium_id:''
+        }
+    }
+    handleInputChange= (event) =>{
+
+      let name=event.target.name;
+      let val=event.target.value;
+      this.setState({[name]:val});
+    
+  }
+    handleSubmit=(event)=>
+    {  event.preventDefault();
+      if(this.state.github_id=='')
+      {
+        alert('Github Username can not be empty');
+
+      }
+      axios.post(`${process.env.REACT_APP_BACKEND_HOST}/developers`,{
+        github_id:this.state.github_id,
+        linkedin_id:this.state.linkedin_id,
+        codechef_id:this.state. codechef_id,
+        hackerrank_id:this.state. hackerrank_id,
+       twitter_id:this.state.twitter_id,
+       medium_id:this.state.medium_id,
+      
+       
+    })
+    .then(function(response){
+        console.log(response);
+    })
+    .catch(function(error){
+        console.log(error);
+    });
+    if(this.state.github_id!='')alert('sucessfully submited the form');
+    this.setState({
+      github_id:'',
+      linkedin_id:'',
+    codechef_id:'',
+      hackerrank_id:'',
+      twitter_id:'',
+    medium_id:''
+
+    });
+    
+    this.props.onClose();
+
+    }
+   
+    render() {
+        return ReactDom.createPortal(
+              <form>
+        <div className='z'>
+        
+        <div className='z1'>
+               <div  className='Adp' >
+                  Add developer profile
+              </div>
+            <div className='Adpg'>
+             
+                   <div>
+                    <img src={Github} alt='github' className='ic1' >
+                    </img>
+                             Github
+                      
+                    </div>
+                  <div>
+               
+                      <input
+                      required
+                      name="github_id"
+                      value={this.state.github_id}
+                         type="text"
+                         onChange={this.handleInputChange}
+                           />   
+                  
+                 </div>
+            </div>
+            <div className='Adpg'>
+             
+            <div>
+             <img src={Linkedin} alt='Linkedin' className='ic1' >
+             </img>
+                      Linkedin
+               
+             </div>
+           <div>
+        
+               <input
+               name="linkedin_id"
+               value={this.state.linkedin_id}
+                  type="text"
+                  onChange={this.handleInputChange}
+                    />   
+           
+          </div>
+     </div>
+     <div className='Adpg'>
+             
+     <div>
+      <img src={Codechef} alt='Codechef' className='ic1' >
+      </img>
+               Codechef
+        
+      </div>
+    <div>
+ 
+        <input
+        name="codechef_id"
+        value={this.state.codechef_id}
+           type="text"
+           onChange={this.handleInputChange}
+             />   
+    
+   </div>
+</div>
+<div className='Adpg'>
+             
+<div>
+ <img src={Hackerrank} alt='Hackerrank' className='ic1' >
+ </img>
+          Hackerrank
+   
+ </div>
+<div>
+
+   <input
+   name="hackerrank_id"
+   value={this.state.hackerrank_id}
+      type="text"
+      onChange={this.handleInputChange}
+        />   
+
+</div>
+</div>
+<div className='Adpg'>
+             
+<div>
+ <img src={Twitter} alt='Twitter' className='ic1' >
+ </img>
+          Twitter
+   
+ </div>
+<div>
+
+   <input
+   name="twitter_id"
+   value={this.state.twitter_id}
+      type="text"
+      onChange={this.handleInputChange}
+        />   
+
+</div>
+</div>
+<div className='Adpg'>
+             
+<div>
+ <img src={Medium} alt='medium' className='ic1' >
+ </img>
+          Medium
+   
+ </div>
+<div>
+
+   <input
+   name="medium_id"
+   value={this.state.medium_id}
+      type="text"
+      onChange={this.handleInputChange}
+        />   
+
+</div>
+</div>
+            <button onClick={this.handleSubmit}>
+            submit 
+            </button>
+            <button onClick={this.props.onClose}>
+            close 
+            </button>
+            </div>
+        </div>
+        </form>                            
+        ,document.getElementById('portal'))
+
+         }
+
+
+}
+    

@@ -1,0 +1,155 @@
+
+.dheader{
+    
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    left: 0px;
+    top: 0px;
+    background: #2F2E41;
+   height: 80px ;
+}
+.dheader>div{
+    font-family: Nunito Sans;
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 33px;
+padding-left: 5%;
+
+}
+.profileinfo
+{  display: flex;
+    position: relative;
+   align-items: center;
+height: 300px;
+flex-direction: row;
+flex-wrap: wrap;
+align-content: space-around;
+
+background: #E5E5E5;
+}
+.droundimg
+{  position: relative;
+    
+    width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    
+}
+.info{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-left: 10%;
+}
+.info_name
+{
+    font-family: Nunito Sans;
+font-style: normal;
+font-weight: 600;
+font-size: 48px;
+line-height: 65px;
+
+color: #3F3D56;
+}
+.info_bio{
+
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 23px;
+    line-height: 33px;
+    
+    color: #3F3D56;
+}
+.info_location
+{
+    font-family: Nunito Sans;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 22px;
+
+color: #3F3D56;
+}
+.repo{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-top: 3%;
+    padding-left: 3%;
+}
+.repo_name{
+    display: flex;
+    position: relative;
+    font-family: Nunito Sans;
+font-style: normal;
+font-weight: 600;
+font-size: 36px;
+line-height: 49px;
+
+}
+.repo_updated_at{
+    display: flex;
+    position: relative;
+font-family: Nunito Sans;
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 33px;
+
+color: #3F3D56;
+
+opacity: 0.4;
+}
+.repo_description{
+    font-family: Nunito Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 32px;
+line-height: 44px;
+
+color: #3F3D56;
+}
+.repo_name_update
+{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.repo_heading{
+    display: flex;
+    position: relative;
+    font-family: Nunito Sans;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+font-style: normal;
+font-weight: 600;
+font-size: 45px;
+line-height: 76px;
+
+color: #3F3D56;
+}
+
+.ic{
+  
+    width : 2%;
+    height: 2%;
+    margin-left: 1%;
+}
+
+.dheader_1
+{
+    padding-left: 3%;
+    color: #FFFFFF;
+}
+.dheader_2
+{
+    padding-right:3px;
+    color: red;
+}
