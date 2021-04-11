@@ -1,5 +1,4 @@
-const dotenv=require('dotenv');
-dotenv.config();
+
 import React,{Component} from 'react';
 import './developerspage.css';
 import  Twitter from './twitter.png';
@@ -10,6 +9,8 @@ import Medium from './medium.png';
 import Linkedin from './linkedin.png';
 import  Footer from './frontpagefooter';
 import { Link, Redirect } from 'react-router-dom';
+const dotenv=require('dotenv');
+dotenv.config();
 function Headbar()
 {
     return (

@@ -1,7 +1,8 @@
-const dotenv=require('dotenv');
-dotenv.config();
+
 import React,{Component} from 'react';
 import Card from './Card';
+const dotenv=require('dotenv');
+dotenv.config();
 export default class Developers extends React.Component{
 
     constructor(props)

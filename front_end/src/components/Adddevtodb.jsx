@@ -1,7 +1,5 @@
-const dotenv=require('dotenv');
-dotenv.config();
-import React from 'react'
 
+import React from 'react'
 import  Twitter from './twitter.png';
 import Hackerrank from './hackerrank.png';
 import Codechef from './codechef.png';
@@ -10,6 +8,8 @@ import Medium from './medium.png';
 import Linkedin from './linkedin.png';
 import './adddevtodb.css';
 import ReactDom from 'react-dom';
+const dotenv=require('dotenv');
+dotenv.config();
 const axios = require('axios').default;
 export default class Adddevtodb extends React.Component {
     constructor(props){
