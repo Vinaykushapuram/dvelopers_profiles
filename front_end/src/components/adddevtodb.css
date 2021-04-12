@@ -50,6 +50,9 @@ border-radius: 10px;
     align-content: center;
     background-color: rgba(0, 0, 0, 0.3);
     width:100%;
+   
+   
+    
     top: 0px;
     bottom: 0px;
 }
@@ -58,7 +61,8 @@ border-radius: 10px;
     background-color: #ffffff;
     border-radius :2 px ;
     display: inline-block;
-    min-height: 300px;
+    
+    max-width: 500px;
     margin: 1rem;
     position: relative;
     min-width: 300px;
@@ -80,4 +84,43 @@ top: 30px;
     margin-left: 1%;
     margin-right: 2%;
 }
+.add_dev_btn
+{
+    display: flex;
+    flex-direction: row;
 
+justify-content: space-between;
+
+}
+.add_dev_btn1{
+    margin-left: 40px;
+    font-family: Nunito Sans;
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+background: #7C639F;
+border-radius: 15px;
+width: 200px;
+height: 50px;
+line-height: 33px;
+
+
+
+color: #FFFFFF;
+}
+.add_dev_btn2{
+    margin-right: 40px;
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    border-radius: 15px;
+  
+    width: 200px;
+    height: 50px;
+    line-height: 33px;
+    
+    
+    
+    color: red;
+}

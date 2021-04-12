@@ -63,28 +63,24 @@ color: #3F3D56;
 
     .displaycard{
     
-        flex:1;
+        
         position: relative;
         display: flex;
         flex-flow:row wrap;
-      justify-content:center;
-        align-items: flex-end;
-        align-content: center;
-       padding-left: 3%;
+      justify-content:space-evenly;
+ 
        
 
     }
-    .displaycard> div{
-        flex: 50%;
-        padding-top: 2%;
-        
-    }
-
+   
 .card
 {
     display: flex;
     flex-direction: row;
     align-items: center;
+    width:300px;
+    margin:10px;
+    
    
     
 }
@@ -125,6 +121,9 @@ font-size: 20px;
 font-family: Nunito Sans;
 font-style: normal;
 font-weight: normal;
+text-decoration:none ;
+margin-left: 20px;
+
 }
 
 
@@ -158,15 +157,16 @@ color: #3F3D56;
     
 }
 .adbtn1
-{ 
+{  position: relative;
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+    font-family: Nunito Sans;
+    outline: none;
     background: #7C639F;
-border-radius: 15px;
-width: 50%;
-height: 40px;
-font-family: Nunito Sans;
-font-style: normal;
-font-weight: 600;
-
+    border-width: 0px;
+    border-radius: 15px;
+   margin-bottom: 20px;
 
 color: #FFFFFF;
 

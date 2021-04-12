@@ -16,11 +16,11 @@ function Headbar()
     return (
         <div className='dheader'>
           <div   className='dheader_1'>
-          The Developer Profile
+              The Developer Profile
            </div>
-       <div   className='dheader_2'>
-       <Link to={'/'}>
-        All Developers
+        <div   className='dheader_2'>
+            <Link to={'/'} className='dheader_link'>
+            All Developers
         </Link>
        </div>
         </div>
@@ -30,9 +30,9 @@ function Profileinfo(props)
 {  //console.log(props.developer.avatar_url);
     return (
         <div className='profileinfo'>
-             <div>
+              <div className='profile_pic'>
                  <img src={props.developer.avatar_url} alt='img'className='droundimg'></img>
-             </div>
+              </div>
             <div className='info'>
                  <div className='info_name'>
                     {props.developer.name}
@@ -40,38 +40,44 @@ function Profileinfo(props)
                  <div className='info_bio'>
                     {props.developer.bio}
                  </div>
-                 <div className='icons' >
-                    <div>
-                      <a >
-                        <img src={Github} className='ic' >
-                       </img>
-                       </a>
+                 <div className='platform-icons ' >
+                    <div className='platform-icon'>
+                        <a href={`https://github.com/sharshach/${props.developer.github_id}`}>
+                           <img src={Github} className='ic' >
+                            </img>
+                         </a>
                     </div>
-                    <div>
-                      <a>
-                       <img src={Linkedin}className='ic' >
-                       </img>
-                      </a>
+                    <div className='platform-icon'>
+                         <a href={`https://www.linkedin.com/in/${props.developer.linkedin_id}`}>
+                          <img src={Linkedin}className='ic' >
+                         </img>
+                        </a>
                     </div>
-                    <div>
-                      <a>
+                    <div className='platform-icon'>
+                      <a  href={`https://www.codechef.com/users/${props.developer.codechef_id}`}>
                       <img src={Codechef} className='ic' >
                        </img>
                       </a>
                   </div> 
-                    <div>
-                       <a>
+                    <div className='platform-icon'>
+                       <a  href={`https://www.hackerrank.com/${props.developer.hackerrank_id}`} >
                        <img src={Hackerrank} className='ic'>
                        </img>
                        </a>
                   </div>
-                  <div>
-                     <a>
+                  <div className='platform-icon'>
+                     <a href ={`https://medium.com/@${props.developer.medium_id}`}>
                     <img src={Medium} className='ic'>
                      </img>
                    </a>
                  </div>
+                 <div className='platform-icon'>
+                     <a href={`https://twitter.com/${props.developer.twitter_id}`}>
+                    <img src={Twitter} className='ic'>
+                     </img>
+                   </a>
                  </div>
+                </div>
                  <div className='info_location'>
                     {props.developer.location}
                  </div>

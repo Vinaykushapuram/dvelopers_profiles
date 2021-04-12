@@ -73,7 +73,7 @@ export default class Adddevtodb extends React.Component {
               <form>
         <div className='z'>
         
-        <div className='z1'>
+            <div className='z1'>
                <div  className='Adp' >
                   Add developer profile
               </div>
@@ -190,14 +190,16 @@ export default class Adddevtodb extends React.Component {
       onChange={this.handleInputChange}
         />   
 
-</div>
-</div>
-            <button onClick={this.handleSubmit}>
+      </div>
+         </div>
+         <div className='add_dev_btn' >
+            <button  className='add_dev_btn1' onClick={this.handleSubmit}>
             submit 
             </button>
-            <button onClick={this.props.onClose}>
+            <button className='add_dev_btn2' onClick={this.props.onClose}>
             close 
             </button>
+            </div>
             </div>
         </div>
         </form>                            

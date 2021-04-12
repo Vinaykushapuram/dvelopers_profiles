@@ -30,7 +30,7 @@ export default class Header extends React.Component{
              Explore developers profile 
                </div>
                   
-            <Search/>
+            
             <Developers />
             <Adddevloper />
             <Footer />

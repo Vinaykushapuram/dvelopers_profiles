@@ -27,9 +27,9 @@ export default class Adddevloper  extends React.Component{
               could not find what you were looking for ?
               </div>
               <div className='adbtn'>
-              <button className='adbtn1'  onClick = {this.setIsopen} >
-              Add developer info
-              </button>
+                 <button className='adbtn1'  onClick = {this.setIsopen} >
+                     Add developer info
+                </button>
               
                 {this.state.isopen ? (
                     <Adddeveloper  open={this.state.isopen} onClose={()=>{this.setIsopen()}} />

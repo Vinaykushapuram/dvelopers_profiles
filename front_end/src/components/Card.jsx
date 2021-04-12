@@ -16,13 +16,14 @@ export default class Card extends React.Component{
             <div className='card'  >
             
               <img src={this.props.avatar_url} alt="img" className='roundimg'></img>
-              
-             <div className='developersname'  >
-             <Link to={`/${this.props.name}`}>
-              {this.props.name}
-              </Link>
-            </div>
-            </div>
+                 <Link to={`/${this.props.name}`}>
+                    <div className='developersname'  >
+             
+                       {this.props.name}
+             
+                     </div>
+                </Link>
+           </div>
             
         )
     }

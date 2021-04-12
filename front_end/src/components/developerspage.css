@@ -1,7 +1,9 @@
 
 .dheader{
-    
+    position:relative;
     display: flex;
+    flex-direction: row ;
+    justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
     left: 0px;
@@ -17,6 +19,11 @@ font-size: 24px;
 line-height: 33px;
 padding-left: 5%;
 
+}
+.dheader_link{
+    text-decoration: none;
+    color: #FFFFFF;
+    margin-right: 65px;
 }
 .profileinfo
 {  display: flex;
@@ -135,21 +142,37 @@ line-height: 76px;
 
 color: #3F3D56;
 }
+.profile_pic{
+    margin-left:40px ;
+}
+.platform-icons
+{
+    position: relative;
+    display:flex;
+    flex-direction: row;
+
+}
+.platform-icon{
+    width:40px;
+    margin:10px;
+}
 
 .ic{
-  
-    width : 2%;
-    height: 2%;
-    margin-left: 1%;
+    width:100%;
+
 }
 
 .dheader_1
 {
     padding-left: 3%;
     color: #FFFFFF;
+    text-decoration: none;
+    
 }
 .dheader_2
 {
     padding-right:3px;
-    color: red;
+
+    text-decoration: none;
+    margin-left: 5px;
 }
