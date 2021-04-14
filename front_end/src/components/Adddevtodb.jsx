@@ -69,10 +69,11 @@ export default class Adddevtodb extends React.Component {
     }
    
     render() {
+      console.log('hi from db');
         return ReactDom.createPortal(
-              <form>
+             
         <div className='z'>
-        
+        <form>
             <div className='z1'>
                <div  className='Adp' >
                   Add developer profile
@@ -201,8 +202,9 @@ export default class Adddevtodb extends React.Component {
             </button>
             </div>
             </div>
+            </form>
         </div>
-        </form>                            
+                                 
         ,document.getElementById('portal'))
 
          }

@@ -8,6 +8,8 @@ import Github from './github.png';
 import Medium from './medium.png';
 import Linkedin from './linkedin.png';
 import  Footer from './frontpagefooter';
+import Exportlink from './export.png';
+import Location from './location.png';
 import { Link, Redirect } from 'react-router-dom';
 const dotenv=require('dotenv');
 dotenv.config();
@@ -79,7 +81,7 @@ function Profileinfo(props)
                  </div>
                 </div>
                  <div className='info_location'>
-                    {props.developer.location}
+                  <img src={Location} className='dlocation-icon'/>  {props.developer.location}
                  </div>
             
             </div>
@@ -92,9 +94,12 @@ function Repo(props)
 
         <div className='repo'>
            <div className='repo_name_update'>
-              <a className='repo_name' href={props.repo.html_url}>
+              <div className='repo_name' >
                {props.repo.name}
-             </a>
+               <a href={props.repo.html_url}>
+               <img  src={Exportlink} className='export-icon' />
+               </a>
+             </div>
              <div  className='repo_updated_at' >
                 last updated_at   {props.repo.updated_at}
                </div>

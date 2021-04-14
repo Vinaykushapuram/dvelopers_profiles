@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import './header.css';
-
-
+import './developerspage.css';
+import Searchpng from './search.png';
 export default class searchBar extends React.Component{
 
     constructor(props)
@@ -22,16 +22,20 @@ export default class searchBar extends React.Component{
 render()
 {
     return (
-        <div className='searchbar' >
-        <div>
+        <div className='search'>
+        <div className='search_bar'>
         <input type="text"
            name='id'
            value={this.state.id}
            onChange={this.handleInputChange}
-         placeholder="Search.." />
-        <button type="submit"> Search</button>
+         placeholder="Search.." className='search_txt'/>
+          <img  onClick={()=>(this.props.onchange(this.state.id)) } src={Searchpng} className='search_icon' >
+        </img>
+       
+        
+
         </div>
-        </div>
+         </div>
     )
 }
 }

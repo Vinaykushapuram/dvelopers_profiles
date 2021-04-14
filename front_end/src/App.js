@@ -10,14 +10,14 @@ dotenv.config();
 function App() {
   return (
     <Router  >
-    <switch basename={process.env.REACT_APP_BASENAME}>
+    <Switch basename={process.env.REACT_APP_BASENAME}>
      <Route exact path='/:github_id'>
            <Developerspage />
         </Route>
     <Route exact path='/'>
           <Header />
     </Route>
-      </switch>
+      </Switch>
       </Router>
       
      );

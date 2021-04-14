@@ -14,7 +14,8 @@ export default class Adddevloper  extends React.Component{
 
     }
    setIsopen()
-   { console.log('hi');
+   { //console.log('hi');
+   console.log(this.state.isopen);
        this.setState({isopen:!this.state.isopen});
 
    }
@@ -32,6 +33,7 @@ export default class Adddevloper  extends React.Component{
                 </button>
               
                 {this.state.isopen ? (
+                    
                     <Adddeveloper  open={this.state.isopen} onClose={()=>{this.setIsopen()}} />
                   ) : null}
 

@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import './header.css';
 import photo from './headphoto.png';
-import Search from './searchbar';
+
 import Developers from './fecthdevelopers';
 import Adddevloper from './adddeveloper';
 import Footer from './frontpagefooter';
@@ -30,7 +30,7 @@ export default class Header extends React.Component{
              Explore developers profile 
                </div>
                   
-            
+           
             <Developers />
             <Adddevloper />
             <Footer />

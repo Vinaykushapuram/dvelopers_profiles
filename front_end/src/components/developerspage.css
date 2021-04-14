@@ -93,6 +93,8 @@ color: #3F3D56;
     display: flex;
     position: relative;
     font-family: Nunito Sans;
+    text-decoration: none;
+    color: blue;
 font-style: normal;
 font-weight: 600;
 font-size: 36px;
@@ -175,4 +177,14 @@ color: #3F3D56;
 
     text-decoration: none;
     margin-left: 5px;
+}
+.export-icon
+{
+    width: 20px;
+    height: 20px;
+}
+.dlocation-icon
+{
+    width: 15px;
+    height: 15px;
 }

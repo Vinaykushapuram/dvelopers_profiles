@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import './header.css';
-
+import Love from './heart.png'
 
 export default class Footer extends React.Component{
 
@@ -9,7 +9,7 @@ export default class Footer extends React.Component{
     {
         return (
             <div className='footer'> 
-            made with love by Vinay
+            made with &nbsp; <img src={Love} className='footer_icon'/> &nbsp; by Vinay
              </div>
         )
 

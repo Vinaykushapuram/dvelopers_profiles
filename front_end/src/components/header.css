@@ -50,17 +50,33 @@ color: #3F3D56;
      width:  50%;
   
     }
-    .searchbar{
-      position: relative;
-      display: flex;
-      flex-wrap: wrap;
-      background: #D0CDE1;
-      width:10%;
-
-      border-radius: 15px;
+    .search{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
     }
-   
+ .search_bar
+ {
+     position: relative;
+     display: flex;
+     width: 380px;
+height: 60px;
+background: #D0CDE1;
+border-radius: 15px;
+align-content: center;
+justify-content: center;
+align-items: center;
+ }
+.search_txt
+{
+    width:300px;
+}
+.search_icon
+{ width:30px;
+    margin:10px;
 
+}
     .displaycard{
     
         
@@ -170,4 +186,14 @@ color: #3F3D56;
 
 color: #FFFFFF;
 
+}
+.footer_icon
+{
+  width:28px;
+    
+}
+.card_arrow
+{
+    width:10px;
+    margin: 2px;
 }

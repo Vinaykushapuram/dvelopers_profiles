@@ -1,4 +1,4 @@
-
+import Search from './searchbar';
 import React,{Component} from 'react';
 import Card from './Card';
 const dotenv=require('dotenv');
@@ -11,7 +11,7 @@ export default class Developers extends React.Component{
         this.state={
             developers:[],
         }
-
+    
     }
    async componentDidMount()
     {
@@ -25,9 +25,25 @@ export default class Developers extends React.Component{
           );
  
     }
+    onchange=((dev_id)=>
+    {   console.log('onchange is called')
+        fetch(`${process.env.REACT_APP_BACKEND_HOST}/developers/${dev_id}`).then((dev)=>dev.json()).then((dev)=>
+        {
+            
+            console.log(dev);
+            this.setState({developers:dev});
+
+        }).catch((err)=>console.log(err));
+
+      
+    });
+
     render()
-    {
+    {  {console.log(this.state.developers)}
         return(
+        
+            <div>
+            <Search onchange={this.onchange} />
             <div className='displaycard'>
             {this.state.developers.map((dev)=>
                 {
@@ -37,6 +53,7 @@ export default class Developers extends React.Component{
                         </div>
                     )
                 })}
+            </div>
             </div>
         )
     }
