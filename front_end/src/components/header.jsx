@@ -22,7 +22,7 @@ export default class Header extends React.Component{
                  Repository
                   </div>
              </div>
-             <div>
+             <div className='heading_image'>
              <img src={photo} alt='img'className='image'></img>
              </div>
              </div>

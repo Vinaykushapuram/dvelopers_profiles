@@ -9,6 +9,8 @@
     left: 0px;
     top: 0px;
     background: #2F2E41;
+    padding-left:80px;
+    padding-right: 80px;
    height: 80px ;
 }
 .dheader>div{
@@ -17,22 +19,23 @@ font-style: normal;
 font-weight: 600;
 font-size: 24px;
 line-height: 33px;
-padding-left: 5%;
+
 
 }
 .dheader_link{
     text-decoration: none;
     color: #FFFFFF;
-    margin-right: 65px;
+   
 }
 .profileinfo
 {  display: flex;
     position: relative;
-   align-items: center;
-height: 300px;
+  
+min-height: 250px;
 flex-direction: row;
+padding-top: 50px;
 flex-wrap: wrap;
-align-content: space-around;
+justify-content: space-around;
 
 background: #E5E5E5;
 }
@@ -165,19 +168,18 @@ color: #3F3D56;
 }
 
 .dheader_1
-{
-    padding-left: 3%;
+{margin:0px;
+    padding:0px;
     color: #FFFFFF;
     text-decoration: none;
     
 }
 .dheader_2
 {
-    padding-right:3px;
-
+    margin:0px;
+    padding:0px;
     text-decoration: none;
-    margin-left: 5px;
-}
+ }
 .export-icon
 {
     width: 20px;
@@ -188,3 +190,35 @@ color: #3F3D56;
     width: 15px;
     height: 15px;
 }
+@media only screen and (max-width: 600px) {
+   .info_name
+   {
+       font-size: 40px;
+   }
+   .droundimg
+   {
+       margin-top: 10px;
+   }
+   .repo_heading
+   {
+       font-size: 40px;
+   }
+   .info{
+       padding-left: unset;
+   }
+   .profileinfo
+   {
+       text-align: center;
+       padding-top: 20px;
+       padding-bottom: 20px;
+   }
+   .dheader
+   {
+       font-size: 18px;
+       padding-left: 10px;
+       padding-right: 10px;
+      
+   }
+  }
+     
+   

@@ -9,6 +9,7 @@ const dotenv=require('dotenv');
 dotenv.config();
 function App() {
   return (
+    <div className='App'>
     <Router  >
     <Switch basename={process.env.REACT_APP_BASENAME}>
      <Route exact path='/:github_id'>
@@ -19,7 +20,7 @@ function App() {
     </Route>
       </Switch>
       </Router>
-      
+      </div> 
      );
  
 

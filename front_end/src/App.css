@@ -1,7 +1,7 @@
 input{
   
-  
-width: 400px;
+width: calc(100% - 20px);
+
 height: 40px;
 
 margin-top: 5px;
@@ -16,7 +16,8 @@ border-radius: 10px;
 
 
 .App {
-  text-align: center;
+ 
+  
 }
 
 .App-logo {
