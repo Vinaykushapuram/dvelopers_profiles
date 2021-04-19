@@ -3,6 +3,14 @@ import React,{Component} from 'react';
 import Card from './Card';
 const dotenv=require('dotenv');
 dotenv.config();
+function  Loading() {
+    return (
+        <div  className='Loading'>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" alt="loading"/>
+        </div>
+
+    );
+   }
 export default class Developers extends React.Component{
 
     constructor(props)
@@ -10,6 +18,7 @@ export default class Developers extends React.Component{
         super(props);
         this.state={
             developers:[],
+            IsLoading:true,
         }
     
     }
@@ -20,18 +29,20 @@ export default class Developers extends React.Component{
          // console.log(devs);
           this.setState(
               {
-                  developers:devs
+                  developers:devs,
+                  IsLoading:false,
               }
           );
  
     }
     onchange=((dev_id)=>
-    {   console.log('onchange is called')
+    {   //console.log('onchange is called')
+        this.state.IsLoading=true;
         fetch(`${process.env.REACT_APP_BACKEND_HOST}/developers/${dev_id}`).then((dev)=>dev.json()).then((dev)=>
         {
             
-            console.log(dev);
-            this.setState({developers:dev});
+           // console.log(dev);
+            this.setState({developers:dev,IsLoading:false});
 
         }).catch((err)=>console.log(err));
 
@@ -45,7 +56,7 @@ export default class Developers extends React.Component{
             <div>
             <Search onchange={this.onchange} />
             <div className='displaycard'>
-            {this.state.developers.map((dev)=>
+            { this.state.IsLoading ?<Loading />:this.state.developers.map((dev)=>
                 {
                     return (
                         <div>

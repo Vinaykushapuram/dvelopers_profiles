@@ -52,7 +52,7 @@ background: #E5E5E5;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    padding-left: 10%;
+  
 }
 .info_name
 {
@@ -97,6 +97,7 @@ color: #3F3D56;
     position: relative;
     font-family: Nunito Sans;
     text-decoration: none;
+   word-break: break-all;
     color: blue;
 font-style: normal;
 font-weight: 600;

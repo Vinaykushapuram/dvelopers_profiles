@@ -13,6 +13,14 @@ import Location from './location.png';
 import { Link, Redirect } from 'react-router-dom';
 const dotenv=require('dotenv');
 dotenv.config();
+function  Loading() {
+    return (
+        <div  className='Loading'>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" alt="loading"/>
+        </div>
+
+    );
+   }
 function Headbar()
 {
     return (
@@ -44,7 +52,7 @@ function Profileinfo(props)
                  </div>
                  <div className='platform-icons ' >
                     <div className='platform-icon'>
-                        <a href={`https://github.com/sharshach/${props.developer.github_id}`}>
+                        <a href={`https://github.com/${props.developer.github_id}`}>
                            <img src={Github} className='ic' >
                             </img>
                          </a>
@@ -119,7 +127,7 @@ class Displayrepo extends React.Component{
             repos:[],
             developers:[],
             developer:{},
-            
+            IsLoading:true,
         }
 
     }
@@ -131,6 +139,7 @@ class Displayrepo extends React.Component{
        this.setState({developers:developerj});
        this.setState({developer:developerj[0]})
         this.setState({repos:developerj[0].repo});
+        this.setState({IsLoading:false});
 
        
         
@@ -139,10 +148,12 @@ class Displayrepo extends React.Component{
     {   
         return (
             <div>
+            {this.state.IsLoading?<Loading />:
+                <div>
             <Profileinfo  developer={this.state.developer} />
-              <div className='repositorys'>
+            <div className='repositorys'>
               <div className='repo_heading'>
-              Github repositories 
+                   Github repositories 
               </div>
               <div>
               {this.state.repos.map((repo)=>
@@ -150,9 +161,12 @@ class Displayrepo extends React.Component{
                     <Repo repo={repo}/> 
                     </div>)
                 })}
-                </div>
+            </div>
              
               </div>
+              </div>
+            }
+            <Footer />
             </div>
         )
     }
@@ -170,7 +184,7 @@ export default class Developerspage extends React.Component{
       <Headbar />
     
       <Displayrepo />
-      <Footer />
+   
       </div>
     );
     }
