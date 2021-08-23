@@ -60,7 +60,7 @@ export default class Developers extends React.Component{
                 {
                     return (
                         <div>
-                        <Card name={dev.login} avatar_url={dev.avatar_url} />
+                        <Card name={dev.github_id} avatar_url={dev.avatar_url} />
                         </div>
                     )
                 })}

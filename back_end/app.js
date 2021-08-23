@@ -6,6 +6,7 @@ var logger = require('morgan');
 var mongoose=require('mongoose');
 var cors=require('cors');
 var  developers  = require('./routes/developers');
+const mysql = require('mysql');
 const dotenv=require('dotenv');
 dotenv.config();
 var app = express();
@@ -20,12 +21,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-//connecting to mongodb
 
-mongoose.connect(process.env.MONGODB_URI,{useNewUrlParser: true, useUnifiedTopology: true,useFindAndModify: false,useCreateIndex:true}).then((msg)=>
-console.log('connected to database')).catch((err)=> console.log(err));
+// connect to sql
+const DBConnect= mysql.createConnection({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE
+});
+DBConnect.connect();
+// sql conn done
 //routes
-app.use('/', developers);
+app.use('/', developers(DBConnect));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

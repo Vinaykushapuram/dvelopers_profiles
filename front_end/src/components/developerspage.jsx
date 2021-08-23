@@ -96,8 +96,8 @@ function Profileinfo(props)
         </div>
     )
 }
-function Repo(props)
-{
+function Repo(props){
+    const updated_at=new Date(props.repo.updated_at).toDateString();
     return(
 
         <div className='repo'>
@@ -108,10 +108,11 @@ function Repo(props)
                <img  src={Exportlink} className='export-icon' />
                </a>
              </div>
-             <div  className='repo_updated_at' >
-                last updated_at   {props.repo.updated_at}
-               </div>
+             
            </div>
+           <div  className='repo_updated_at' >
+                last updated  on {updated_at}
+               </div>
            <div  className='repo_description'>
                {props.repo.description}
           </div>
@@ -136,9 +137,9 @@ class Displayrepo extends React.Component{
       var developer1= await fetch(`${process.env.REACT_APP_BACKEND_HOST}/developers`+`${window.location.pathname}`);
       var developerj=await developer1.json();
             console.log(developerj);
-       this.setState({developers:developerj});
-       this.setState({developer:developerj[0]})
-        this.setState({repos:developerj[0].repo});
+    //    this.setState({developers:developerj});
+       this.setState({developer:developerj})
+        this.setState({repos:developerj.repos});
         this.setState({IsLoading:false});
 
        
