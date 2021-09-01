@@ -1,6 +1,9 @@
-import Search from './searchbar';
+import Search from './Search';
 import React,{Component} from 'react';
-import Card from './Card';
+//import Card from './Card';
+import './header.css';
+import { Link, Redirect } from 'react-router-dom';
+import  Arrow from '../icons/diagonal.png';
 const dotenv=require('dotenv');
 dotenv.config();
 function  Loading() {
@@ -11,6 +14,24 @@ function  Loading() {
 
     );
    }
+
+function Card(props){
+    return  (
+        <div className='card'  >
+            
+        <img src={props.avatar_url} alt="img" className='roundimg'></img>
+          
+              <div className='developersname'  >
+       
+                 {props.name}
+                 <Link to={`/${props.name}`}>
+                 <img src={Arrow}  className='card_arrow'  />
+                 </Link>
+               </div>
+          
+     </div>
+    )
+}
 export default class Developers extends React.Component{
 
     constructor(props)
@@ -26,7 +47,7 @@ export default class Developers extends React.Component{
     {
        var developers1=await fetch(`${process.env.REACT_APP_BACKEND_HOST}/developers`);
        var devs=await developers1.json();
-         // console.log(devs);
+         
           this.setState(
               {
                   developers:devs,
@@ -36,21 +57,21 @@ export default class Developers extends React.Component{
  
     }
     onchange=((dev_id)=>
-    {   //console.log('onchange is called')
+    {   
         this.state.IsLoading=true;
         fetch(`${process.env.REACT_APP_BACKEND_HOST}/developers/${dev_id}`).then((dev)=>dev.json()).then((dev)=>
         {
-            
-           // console.log(dev);
+             
+           
             this.setState({developers:dev,IsLoading:false});
 
         }).catch((err)=>console.log(err));
-
+ 
       
     });
 
     render()
-    {  {console.log(this.state.developers)}
+    {  
         return(
         
             <div>
@@ -60,7 +81,7 @@ export default class Developers extends React.Component{
                 {
                     return (
                         <div>
-                        <Card name={dev.github_id} avatar_url={dev.avatar_url} />
+                        <Card name={dev.login} avatar_url={dev.avatar_url} />
                         </div>
                     )
                 })}

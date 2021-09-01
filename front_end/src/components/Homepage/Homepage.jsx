@@ -1,10 +1,10 @@
 import React,{Component} from 'react';
 import './header.css';
-import photo from './headphoto.png';
+import photo from '../icons/headphoto.png';
+import Love from '../icons/heart.png'
+import Developers from './Displaydevelopers';
+import Adddeveloper from '../Adddeveloper/Adddeveloper';
 
-import Developers from './fecthdevelopers';
-import Adddevloper from './adddeveloper';
-import Footer from './frontpagefooter';
 export default class Header extends React.Component{
 
     render()
@@ -32,8 +32,10 @@ export default class Header extends React.Component{
                   
            
             <Developers />
-            <Adddevloper />
-            <Footer />
+            <Adddeveloper />
+            <div className='footer'> 
+            made with &nbsp; <img src={Love} className='footer_icon'/> &nbsp; by Vinay
+             </div>
             </div>
         )
     }

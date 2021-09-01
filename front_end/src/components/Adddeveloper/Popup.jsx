@@ -1,11 +1,11 @@
 
 import React from 'react'
-import  Twitter from './twitter.png';
-import Hackerrank from './hackerrank.png';
-import Codechef from './codechef.png';
-import Github from './github.png';
-import Medium from './medium.png';
-import Linkedin from './linkedin.png';
+import  Twitter from '../icons/twitter.png';
+import Hackerrank from '../icons/hackerrank.png';
+import Codechef from '../icons/codechef.png';
+import Github from '../icons/github.png';
+import Medium from '../icons/medium.png';
+import Linkedin from '../icons/linkedin.png';
 import './adddevtodb.css';
 import ReactDom from 'react-dom';
 const dotenv=require('dotenv');
@@ -69,7 +69,7 @@ export default class Adddevtodb extends React.Component {
     }
    
     render() {
-      console.log('hi from db');
+      
         return ReactDom.createPortal(
              
         <div className='z'>

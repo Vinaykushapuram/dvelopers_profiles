@@ -1,16 +1,18 @@
 
 import React,{Component} from 'react';
 import './developerspage.css';
-import  Twitter from './twitter.png';
-import Hackerrank from './hackerrank.png';
-import Codechef from './codechef.png';
-import Github from './github.png';
-import Medium from './medium.png';
-import Linkedin from './linkedin.png';
-import  Footer from './frontpagefooter';
-import Exportlink from './export.png';
-import Location from './location.png';
+import '../Homepage/header.css';
+import  Twitter from '../icons/twitter.png';
+import Love from '../icons/heart.png'
+import Hackerrank from '../icons/hackerrank.png';
+import Codechef from '../icons/codechef.png';
+import Github from '../icons/github.png';
+import Medium from '../icons/medium.png';
+import Linkedin from '../icons/linkedin.png';
+import Exportlink from '../icons/export.png';
+import Location from '../icons/location.png';
 import { Link, Redirect } from 'react-router-dom';
+
 const dotenv=require('dotenv');
 dotenv.config();
 function  Loading() {
@@ -37,7 +39,7 @@ function Headbar()
     );
 }
 function Profileinfo(props)
-{  //console.log(props.developer.avatar_url);
+{  
     return (
         <div className='profileinfo'>
               <div className='profile_pic'>
@@ -52,7 +54,7 @@ function Profileinfo(props)
                  </div>
                  <div className='platform-icons ' >
                     <div className='platform-icon'>
-                        <a href={`https://github.com/${props.developer.github_id}`}>
+                        <a href={`https://github.com/${props.developer.login}`}>
                            <img src={Github} className='ic' >
                             </img>
                          </a>
@@ -127,20 +129,22 @@ class Displayrepo extends React.Component{
         {
             repos:[],
             developers:[],
-            developer:{},
+            currdeveloper:{},
             IsLoading:true,
         }
 
     }
    async componentDidMount()
-    {//console.log('hi');
-      var developer1= await fetch(`${process.env.REACT_APP_BACKEND_HOST}/developers`+`${window.location.pathname}`);
-      var developerj=await developer1.json();
-            console.log(developerj);
-    //    this.setState({developers:developerj});
-       this.setState({developer:developerj})
-        this.setState({repos:developerj.repos});
+    {
+        fetch(`${process.env.REACT_APP_BACKEND_HOST}/developers`+`${window.location.pathname}`).then((developer)=>developer.json()).then((developer)=>{
+        this.setState({developers:developer});
+        this.setState({currdeveloper: developer[0]})
+        this.setState({repos:developer[0].repo});
         this.setState({IsLoading:false});
+      }).catch((err)=>console.log(err));
+    
+       
+      
 
        
         
@@ -151,7 +155,7 @@ class Displayrepo extends React.Component{
             <div>
             {this.state.IsLoading?<Loading />:
                 <div>
-            <Profileinfo  developer={this.state.developer} />
+            <Profileinfo  developer={this.state.currdeveloper} />
             <div className='repositorys'>
               <div className='repo_heading'>
                    Github repositories 
@@ -160,14 +164,16 @@ class Displayrepo extends React.Component{
               {this.state.repos.map((repo)=>
                 {return(<div>
                     <Repo repo={repo}/> 
-                    </div>)
+                    </div>);
                 })}
             </div>
              
               </div>
               </div>
             }
-            <Footer />
+            <div className='footer'> 
+            made with &nbsp; <img src={Love} className='footer_icon'/> &nbsp; by Vinay
+             </div>
             </div>
         )
     }

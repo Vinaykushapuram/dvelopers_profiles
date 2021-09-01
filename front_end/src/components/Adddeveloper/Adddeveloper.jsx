@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
-import './header.css';
-import Adddeveloper from './Adddevtodb.jsx';
+import '../Homepage/header.css';
+import Popup from './Popup.jsx';
 export default class Adddevloper  extends React.Component{
 
     constructor(props)
@@ -14,8 +14,7 @@ export default class Adddevloper  extends React.Component{
 
     }
    setIsopen()
-   { //console.log('hi');
-   console.log(this.state.isopen);
+   { 
        this.setState({isopen:!this.state.isopen});
 
    }
@@ -34,7 +33,7 @@ export default class Adddevloper  extends React.Component{
               
                 {this.state.isopen ? (
                     
-                    <Adddeveloper  open={this.state.isopen} onClose={()=>{this.setIsopen()}} />
+                    <Popup  open={this.state.isopen} onClose={()=>{this.setIsopen()}} />
                   ) : null}
 
                 

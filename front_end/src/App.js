@@ -1,9 +1,9 @@
-import logo from './logo.svg';
+
 import './App.css';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
-import Header from './components/header';
+import Homepage from './components/Homepage/Homepage';
 
-import Developerspage from './components/developerspage';
+import Developerspage from './components/Developerspage/Developerspage';
 
 const dotenv=require('dotenv');
 dotenv.config();
@@ -16,7 +16,7 @@ function App() {
            <Developerspage />
         </Route>
     <Route exact path='/'>
-          <Header />
+          <Homepage />
     </Route>
       </Switch>
       </Router>

@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import './header.css';
-import './developerspage.css';
-import Searchpng from './search.png';
+import '../Developerspage/developerspage.css';
+import Searchpng from '../icons/search.png';
 export default class searchBar extends React.Component{
 
     constructor(props)

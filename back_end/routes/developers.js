@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var fetch=require('node-fetch');
 const database=require('../models/database');
-const helper=require('helper');
+const helper=require('./helper');
 let DB;
 let Helper;
 const developers=DBConnect=>{
@@ -50,15 +50,7 @@ router.post('/developers',function(req,res,next){
 });
 
 
-// router.delete('/developers/:login',function(req,res,next){
-//     var query=req.params;
-//     console.log(query);
-//     developer.deleteOne({"login":req.params.login}).then((developer)=>{  
-//         res.statusCode=204;
-//         console.log(developer);
-//         res.json(developer);
-//     }).catch((err)=>next(err));
-// });
+
 
 router.get('/developers/:login',function(req,res,next){
     const mergePromise = Promise.all([
